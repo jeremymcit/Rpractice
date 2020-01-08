@@ -53,3 +53,5 @@ which(Boston$medv == min(Boston$medv))
 sum(Boston$rm>7)
 sum(Boston$rm>8)
 summary(subset(Boston, rm>8))
+
+
