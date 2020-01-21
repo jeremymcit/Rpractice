@@ -30,3 +30,6 @@ predict(lm.fit, data.frame(horsepower =c(98)), interval = "prediction", level = 
 #8b)
 plot(Auto$horsepower, Auto$mpg)
 abline(lm.fit, col = "red")
+#8c
+plot(lm.fit)
+#The residuals vs fitted appear to show evidence of non-linearity.
