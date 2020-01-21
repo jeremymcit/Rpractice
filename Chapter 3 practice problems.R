@@ -9,13 +9,21 @@
 #b)
 50+.07*110+35+4*20+4*110*.01-10*4
 
-
+#8
 library(MASS)
 #install.packages("ISLR")
 library(ISLR)
-lm.fit <- lm(medv~lstat, data = Boston)
-lm.fit2<-update(lm.fit,~.+I(lstat^2))
-lm.fit3<-update(lm.fit2,~.+crim)
-anova(lm.fit2,lm.fit3)
-plot(lm.fit3)
+#8a)
+lm.fit<-lm(mpg~horsepower, Auto)
+summary(lm.fit)
+summary(lm.fit)$r.squared
+#about 60% of mpg predicted by horesepower
+summary(lm.fit)$sigma/mean(Auto$mpg)
+#About 20% error in the fit.
+#iii) negative due to a negative coefficient on horsepower and a low p value
 
+#iv)
+sum(lm.fit$coefficients*c(1,98))
+predict(lm.fit, data.frame(horsepower =c(98)), interval = "confidence")
+predict(lm.fit, data.frame(horsepower =c(98)), interval = "prediction", level = 0.95)
+        
