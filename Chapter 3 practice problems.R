@@ -26,4 +26,7 @@ summary(lm.fit)$sigma/mean(Auto$mpg)
 sum(lm.fit$coefficients*c(1,98))
 predict(lm.fit, data.frame(horsepower =c(98)), interval = "confidence")
 predict(lm.fit, data.frame(horsepower =c(98)), interval = "prediction", level = 0.95)
-        
+
+#8b)
+plot(Auto$horsepower, Auto$mpg)
+abline(lm.fit, col = "red")
